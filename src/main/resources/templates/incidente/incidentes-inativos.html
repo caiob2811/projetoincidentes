@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.min.css">
+    <title>Project Incidente</title>
+    <meta name="author" content="Caio" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family+Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fdad58566a.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+       <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+       <div class="container" style="margin-top:50px;"></div>
+
+
+       <h3>Últimos incidentes adicionados</h3>
+       <hr>
+       <table class="table table-bordered table-over">
+
+        <thead>
+            <th scope="col">id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">descrição</th>
+            <th scope="col">Data de abertura</th>
+            <th scope="col">Data de fechamento</th>
+            <th scope="col">Atualização</th>
+        </thead>
+        <tbody>
+        <tr scope="row" th:each="incidentes : ${incidentesInativos}">
+
+            <td th:text="${incidentes.id_incident}"></td>
+            <td th:text="${incidentes.name}"></td>
+            <td th:text="${incidentes.description_incident}"></td>
+            <td th:text="${incidentes.creat_at}"></td>
+            <td th:text="${incidentes.closed_at}"></td>
+            <td th:text="${incidentes.update_at}"></td>
+
+
+            <td>
+                <a class="btn-nav-primary" th:href="@{alterar/{id}(id=${incidentes.id_incident})}">
+
+                <i class="fa-solid fa-pen"></i> Editar </a>
+
+                <a class="btn-nav-danger" th:href="@{excluir/{id}(id=${incidentes.id_incident})}">
+
+                <i class="fa-solid fa-xmark"></i> Excluir </a>
+            </td>
+
+        </tr>
+        </tbody>
+        </table>
+
+       <script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+       <script src="/webjars/bootstrap/5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.min.css">
+	<title>Projeto Incidente</title>
+	<meta name="author" content="Caio" />
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://kit.fontawesome.com/006642858d.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family+Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/fdad58566a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<section id="btn_section" class="neo-section" style="background-image: url('img/bg-index.jpg');">
+
+
+	<h1 class="texto-centro">Sistema de Gerenciamento de Incidentes</h1>
+	
+	<div class="botoes">
+		
+		<div class="wm">
+			<h5 class="btncss" style="margin-bottom: 45px;">Editar Incidente</h5>
+		</div>
+
+
+		<div class="wm">
+			<h5 class="btncss">Consultar Incidente</h5>
+		</div>
+
+
+	</div>	
+	</section>
+
+	</div>
+    <div th:replace="fragmentos/fragmentos :: rodape"></div>
+
+	<script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/5.3.0/dist/js/bootstrap.min.js"></script>
+	<script src="js/teste.js"></script>
+</body>
+</html>

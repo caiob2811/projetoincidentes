@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.0/dist/css/bootstrap.min.css">
+    <title>Encontrar Incidentes</title>
+    <meta name="author" content="Caio"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family+Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fdad58566a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+<div class="container" style="margin-top:50px;"></div>
+
+<h4> Encontrar Incidentes</h4>
+<hr>
+<br>
+
+    <form method="post" action="buscar-incidente" th:object="${incidente}">
+        <div class="input-group col-6">
+            <input class="form-control" name="nomePesquisa" placeholder="Busque o nome do Incidente...">
+            <div class="input-group-append">
+            <button type="submit" class="btn btn-outline-secondary">Pesquisar</button>
+            </div>
+        </div>
+    </form>
+<br>
+<hr>
+    <div class ="row">
+        <div class="card" style="width:280px">
+        <a th:href="@{/incidentes-ativos}">
+        <img class="card-img-top" src="img/incidentes.jpeg"/>
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">Incidentes Ativos no Sistema</h5>
+            <p class="card-text">Busque por todos os Incidentes que estão ativos no sistema</p>
+            <a th:href="@{/incidentes-ativos}" class="btn btn-outLine-primary">Clique Aqui</a>
+        </div>
+    </div>
+
+     <!-- Incidentes Inativos -->
+
+    <div class ="card ml-3" style="width:280px">
+        <a th:href="@{/incidentes-inativos}">
+        <img class="card-img-top" src="img/transferir.jpeg"/>
+        </a>
+        <div class="card-body">
+            <h5 class="card-title">Incidentes Inativos no Sistema</h5>
+            <p class="card-text">Busque por todos os Incidentes que estão inativos no sistema</p>
+            <a th:href="@{/incidentes-inativos}" class="btn btn-outLine-primary">Clique Aqui</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+<script src="/webjars/bootstrap/5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
